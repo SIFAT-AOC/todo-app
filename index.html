@@ -3,24 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Todo application</title>
     <link rel="stylesheet" href="./style.css" />
+    <title>Notes App</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Todo application</h1>
-      <h4>feature</h4>
-      <ul>
-        <li>input</li>
-        <li>adding content</li>
-      </ul>
-
-      <h3>Add your task</h3>
-      <input type="text" id="taskfield" />
-      <button id="taskaddbtn">Add task</button>
-
-      <ul id="tasklist"></ul>
+    <div class="notes-container">
+      <h1>Notes</h1>
+      <div class="notes-body" id="notes-body">
+        <div class="note-item-bg">
+          <div class="note-item">
+            <div class="note-text">
+              <h4>Bucket list 2020</h4>
+              <span>8.july 2020</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, ut.
+              </p>
+            </div>
+            <img src="./man.webp" alt="" />
+          </div>
+          <div class="d-flex align-center btn-list">
+            <button class="delet-notes">Delete</button>
+            <button class="edit-notes">Edit</button>
+            <button class="View-notes">View</button>
+          </div>
+        </div>
+      </div>
+      <div class="add-notes" id="new-notes">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+          />
+        </svg>
+      </div>
+    </div>
+    <!-- add edit notes -->
+    <div class="popup-container" id="popup-container">
+      <div class="popup btn-list">
+        <span class="close-btn" id="close-popup">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+            /></svg
+        ></span>
+        <h2 id="popup-title">Add Note</h2>
+        <input type="text" id="note-title" placeholder="Title" required />
+        <textarea id="note-description" placeholder="Description"></textarea>
+        <input type="file" id="note-image" />
+        <button class="edit-notes" id="save-note">Add Note</button>
+        <button class="delet-notes" id="cancel-note">Cancel</button>
+      </div>
     </div>
     <script src="./app.js"></script>
   </body>
