@@ -23,7 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Open popup function
   function openPopup(title, index = -1) {
-    document.getElementById("popup-title").textContent = title;
+    document.getElementById("popup-title").textContent =
+      index >= 0 ? "update" : title;
+    document.getElementById("save-note").textContent =
+      index >= 0 ? "update" : "add";
     popupContainer.style.display = "flex";
     if (index >= 0) {
       // Edit mode
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("note-description").value =
         notes[index].description;
       editIndex = index;
+      document.getElementById("note-image").value = notes[index].imageFile;
     } else {
       // Add mode
       document.getElementById("note-title").value = "";
@@ -117,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="d-flex align-center btn-list">
           <button class="View-notes" onclick="viewNote(${index})">View</button>
-          <button class="edit-notes" onclick="editNote(${index})">Edit</button>
+          <button class="edit-notes" onclick="editNote(${index})">edit</button>
           <button class="delet-notes" onclick="deleteNote(${index})">Delete</button>
         </div>
       `;
